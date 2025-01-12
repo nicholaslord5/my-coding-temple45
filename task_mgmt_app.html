@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- Home Page -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Task Manager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Task Manager</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Create Task</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </ul>
+    </div>
+  </nav>
+  <div class="jumbotron">
+    <h1 class="display-4">Hello Task Manager!</h1>
+    <p class="lead">Organize your tasks efficiently and get things done.</p>
+  </div>
+  <!-- Card -->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Create and Manage</h5>
+      <p class="card-text">Create and track all your tasks, and keep them all in one easily accessible place so you can stay organized and on track.</p>
+    </div>
+  </div>
+<!-- Dashboard Page -->
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Task Title</h5>
+      <form>
+        <!-- Task details inputs -->
+        <button class="btn btn-primary">Edit</button>
+      </form>
+    </div>
+  </div>
+<!-- Task Details Page -->
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h4>Task Title: {{task.title}}</h4>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="taskDescription">Description</label>
+            <textarea class="form-control" id="taskDescription" rows="3" readonly>{{task.description}}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="taskStatus">Status</label>
+            <select class="form-control" id="taskStatus">
+              <option>{{task.status}}</option>
+              <option value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="taskDueDate">Due Date</label>
+            <input type="date" class="form-control" id="taskDueDate" value="{{task.dueDate}}">
+          </div>
+          <div class="form-group">
+            <label for="taskPriority">Priority</label>
+            <select class="form-control" id="taskPriority">
+              <option>{{task.priority}}</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Update Task</button>
+          <a href="#" class="btn btn-secondary ml-2">Back to Dashboard</a>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- Task Creation Page -->
+<form>
+    <div class="form-group">
+      <label for="taskTitle">Task Title</label>
+      <input type="text" class="form-control" id="taskTitle" placeholder="Enter task title">
+    </div>
+    <form>
+        <div class="form-group">
+          <label for="taskTitle">Task Title</label>
+          <input type="text" class="form-control" id="taskTitle" placeholder="Enter task title" required>
+        </div>
+        <div class="form-group">
+          <label for="taskDescription">Description</label>
+          <textarea class="form-control" id="taskDescription" rows="3" placeholder="Enter task description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="taskDueDate">Due Date</label>
+          <input type="date" class="form-control" id="taskDueDate" required>
+        </div>
+        <div class="form-group">
+          <label for="taskPriority">Priority</label>
+          <select class="form-control" id="taskPriority" required>
+            <option value="">Select Priority</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="taskCategory">Category</label>
+          <input type="text" class="form-control" id="taskCategory" placeholder="Enter category (optional)">
+        </div>
+    <button type="submit" class="btn btn-primary">Create Task</button>
+</form>
+<!-- Register and Authentication -->
+<div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" required>
+    <div class="invalid-feedback">Please choose a username.</div>
+  </div>
